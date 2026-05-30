@@ -850,10 +850,64 @@ body {
   .matrix { grid-template-columns: 1fr; }
   .persona { grid-template-columns: 1fr; }
 }
+
+  .mobile-nav {
+  display: none;
+  position: sticky;
+  top: 0;
+  z-index: 200;
+  background: var(--obsidian-2);
+  padding: 10px;
+  border-bottom: 1px solid var(--border);
+}
+
+.mobile-nav select {
+  width: 100%;
+  padding: 10px;
+  background: var(--obsidian-3);
+  color: var(--text-primary);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  font-size: 14px;
+}
+
+  @media (max-width: 900px) {
+  .nav { display: none; }
+  .mobile-nav { display: block; }
+  .main { margin-left: 0; }
+  .hero, .section { padding: 2rem; }
+  .tier-grid { grid-template-columns: 1fr; }
+  .matrix { grid-template-columns: 1fr; }
+  .persona { grid-template-columns: 1fr; }
+}
 </style>
 </head>
 <body>
 
+  <!-- MOBILE NAV -->
+<div class="mobile-nav">
+  <select onchange="showSection(this.value)">
+    <option value="overview">00 - Dashboard</option>
+    <option value="s1">01 - Positionnement</option>
+    <option value="s2">02 - ICP</option>
+    <option value="s3">03 - Personas</option>
+    <option value="s4">04 - Vendeurs</option>
+    <option value="s5">05 - Clients</option>
+    <option value="s6">06 - Social</option>
+    <option value="s7">07 - TikTok</option>
+    <option value="s8">08 - WhatsApp</option>
+    <option value="s9">09 - Campus</option>
+    <option value="s10">10 - Influence</option>
+    <option value="s11">11 - Referral</option>
+    <option value="s12">12 - Growth</option>
+    <option value="s13">13 - Ambassadeurs</option>
+    <option value="s14">14 - KPIs</option>
+    <option value="s15">15 - Budget</option>
+    <option value="s16">16 - Plan</option>
+    <option value="s17">17 - Domination</option>
+    <option value="s18">18 - Réseau</option>
+  </select>
+</div>
 <!-- SIDEBAR -->
 <nav class="nav">
   <div class="nav-logo">
