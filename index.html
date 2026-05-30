@@ -1,0 +1,2143 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sanhia — Go-To-Market Stratégique 2025</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet">
+<style>
+:root {
+  --gold: #C9A84C;
+  --gold-light: #E8CC7A;
+  --gold-pale: #F5EDD2;
+  --obsidian: #0D0D0D;
+  --obsidian-2: #161616;
+  --obsidian-3: #1E1E1E;
+  --obsidian-4: #2A2A2A;
+  --obsidian-5: #363636;
+  --text-primary: #F0EDE4;
+  --text-secondary: #9A9485;
+  --text-muted: #5C5750;
+  --accent-red: #C0392B;
+  --accent-green: #1D6A4A;
+  --accent-teal: #1A7A6E;
+  --border: rgba(201, 168, 76, 0.2);
+  --border-strong: rgba(201, 168, 76, 0.45);
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  background: var(--obsidian);
+  color: var(--text-primary);
+  font-family: 'DM Sans', sans-serif;
+  font-size: 15px;
+  line-height: 1.7;
+  font-weight: 300;
+}
+
+/* SIDEBAR NAV */
+.nav {
+  position: fixed;
+  left: 0; top: 0; bottom: 0;
+  width: 260px;
+  background: var(--obsidian-2);
+  border-right: 1px solid var(--border);
+  overflow-y: auto;
+  z-index: 100;
+  display: flex;
+  flex-direction: column;
+}
+
+.nav-logo {
+  padding: 2rem 1.5rem 1.5rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.nav-logo .wordmark {
+  font-family: 'Playfair Display', serif;
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--gold);
+  letter-spacing: 0.05em;
+}
+
+.nav-logo .subtitle {
+  font-size: 11px;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  margin-top: 4px;
+}
+
+.nav-section {
+  padding: 1rem 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.nav-section-title {
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  color: var(--text-muted);
+  padding: 0 1.5rem 0.5rem;
+  font-weight: 500;
+}
+
+.nav-link {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 0.45rem 1.5rem;
+  font-size: 13px;
+  color: var(--text-secondary);
+  text-decoration: none;
+  transition: all 0.2s;
+  cursor: pointer;
+  font-weight: 300;
+  border: none;
+  background: none;
+  width: 100%;
+  text-align: left;
+}
+
+.nav-link:hover, .nav-link.active {
+  color: var(--gold);
+  background: rgba(201, 168, 76, 0.06);
+}
+
+.nav-link .num {
+  font-size: 10px;
+  color: var(--text-muted);
+  min-width: 18px;
+  font-family: 'DM Sans', sans-serif;
+}
+
+.nav-progress {
+  margin-top: auto;
+  padding: 1.5rem;
+  border-top: 1px solid var(--border);
+}
+
+.progress-label {
+  font-size: 11px;
+  color: var(--text-muted);
+  margin-bottom: 8px;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.progress-bar {
+  height: 2px;
+  background: var(--obsidian-5);
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.progress-fill {
+  height: 100%;
+  background: var(--gold);
+  border-radius: 2px;
+  transition: width 0.4s ease;
+  width: 0%;
+}
+
+/* MAIN */
+.main {
+  margin-left: 260px;
+  min-height: 100vh;
+}
+
+/* HERO */
+.hero {
+  background: var(--obsidian-2);
+  border-bottom: 1px solid var(--border);
+  padding: 5rem 4rem 4rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  top: -60px; right: -60px;
+  width: 400px; height: 400px;
+  background: radial-gradient(circle, rgba(201,168,76,0.07) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.hero-eyebrow {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.25em;
+  color: var(--gold);
+  margin-bottom: 1.5rem;
+  font-weight: 500;
+}
+
+.hero-title {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(36px, 5vw, 60px);
+  font-weight: 900;
+  color: var(--text-primary);
+  line-height: 1.1;
+  margin-bottom: 0.5rem;
+}
+
+.hero-title span {
+  color: var(--gold);
+  font-style: italic;
+}
+
+.hero-sub {
+  font-size: 18px;
+  color: var(--text-secondary);
+  font-weight: 300;
+  margin-top: 1rem;
+  max-width: 600px;
+}
+
+.hero-meta {
+  display: flex;
+  gap: 2rem;
+  margin-top: 2.5rem;
+  flex-wrap: wrap;
+}
+
+.hero-stat {
+  display: flex;
+  flex-direction: column;
+}
+
+.hero-stat .val {
+  font-family: 'Playfair Display', serif;
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--gold);
+}
+
+.hero-stat .lbl {
+  font-size: 12px;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+/* SECTION */
+.section {
+  padding: 4rem;
+  border-bottom: 1px solid var(--border);
+  display: none;
+}
+
+.section.active { display: block; }
+
+.section-header {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.5rem;
+  margin-bottom: 3rem;
+}
+
+.section-num {
+  font-family: 'Playfair Display', serif;
+  font-size: 64px;
+  font-weight: 900;
+  color: var(--border-strong);
+  line-height: 1;
+  min-width: 60px;
+}
+
+.section-title-group .eyebrow {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: var(--gold);
+  font-weight: 500;
+  margin-bottom: 6px;
+}
+
+.section-title-group h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 32px;
+  font-weight: 700;
+  color: var(--text-primary);
+  line-height: 1.2;
+}
+
+/* CARDS */
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.card {
+  background: var(--obsidian-3);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 1.5rem;
+  position: relative;
+  overflow: hidden;
+  transition: border-color 0.2s;
+}
+
+.card:hover { border-color: var(--border-strong); }
+
+.card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 2px;
+  background: var(--gold);
+  opacity: 0;
+  transition: opacity 0.2s;
+}
+
+.card:hover::before { opacity: 1; }
+
+.card-icon {
+  width: 40px; height: 40px;
+  background: rgba(201, 168, 76, 0.1);
+  border-radius: 8px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 18px;
+  margin-bottom: 1rem;
+}
+
+.card h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 17px;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 0.5rem;
+}
+
+.card p {
+  font-size: 13px;
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+.card .tag {
+  display: inline-block;
+  background: rgba(201, 168, 76, 0.12);
+  color: var(--gold-light);
+  font-size: 10px;
+  padding: 3px 10px;
+  border-radius: 20px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 0.75rem;
+  font-weight: 500;
+}
+
+/* PERSONA CARD */
+.persona {
+  background: var(--obsidian-3);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 2rem;
+  display: grid;
+  grid-template-columns: 80px 1fr;
+  gap: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.persona-avatar {
+  width: 80px; height: 80px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--gold) 0%, var(--gold-light) 100%);
+  display: flex; align-items: center; justify-content: center;
+  font-family: 'Playfair Display', serif;
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--obsidian);
+  flex-shrink: 0;
+}
+
+.persona h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 20px;
+  color: var(--text-primary);
+  margin-bottom: 4px;
+}
+
+.persona .role {
+  color: var(--gold);
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: 1rem;
+}
+
+.persona-attrs {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.persona-attr { font-size: 13px; }
+.persona-attr .attr-label {
+  color: var(--text-muted);
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: 3px;
+}
+.persona-attr .attr-value { color: var(--text-secondary); }
+
+/* TIMELINE */
+.timeline { position: relative; padding-left: 2rem; }
+
+.timeline::before {
+  content: '';
+  position: absolute;
+  left: 6px; top: 0; bottom: 0;
+  width: 1px;
+  background: var(--border);
+}
+
+.timeline-item {
+  position: relative;
+  padding-bottom: 2.5rem;
+}
+
+.timeline-item:last-child { padding-bottom: 0; }
+
+.timeline-dot {
+  position: absolute;
+  left: -2rem;
+  top: 4px;
+  width: 13px; height: 13px;
+  border-radius: 50%;
+  background: var(--gold);
+  border: 2px solid var(--obsidian);
+}
+
+.timeline-phase {
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  color: var(--gold);
+  margin-bottom: 4px;
+  font-weight: 500;
+}
+
+.timeline-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 0.5rem;
+}
+
+.timeline-body {
+  font-size: 13px;
+  color: var(--text-secondary);
+}
+
+.timeline-body ul { margin-top: 0.5rem; padding-left: 1.2rem; }
+.timeline-body li { margin-bottom: 4px; }
+
+/* KPI TABLE */
+.kpi-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13px;
+}
+
+.kpi-table th {
+  text-align: left;
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: var(--text-muted);
+  padding: 0.5rem 1rem;
+  border-bottom: 1px solid var(--border);
+  font-weight: 500;
+}
+
+.kpi-table td {
+  padding: 0.75rem 1rem;
+  border-bottom: 1px solid rgba(201,168,76,0.08);
+  color: var(--text-secondary);
+  vertical-align: top;
+}
+
+.kpi-table td:first-child { color: var(--text-primary); font-weight: 400; }
+
+.kpi-table tr:hover td { background: rgba(201,168,76,0.03); }
+
+.badge {
+  display: inline-block;
+  font-size: 10px;
+  padding: 2px 8px;
+  border-radius: 20px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.badge-gold { background: rgba(201,168,76,0.15); color: var(--gold-light); }
+.badge-red { background: rgba(192,57,43,0.15); color: #E57B6E; }
+.badge-green { background: rgba(29,106,74,0.2); color: #5DBD95; }
+.badge-teal { background: rgba(26,122,110,0.2); color: #5ECFC4; }
+
+/* BUDGET BARS */
+.budget-item {
+  display: grid;
+  grid-template-columns: 180px 1fr 60px;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.budget-label { font-size: 13px; color: var(--text-secondary); }
+
+.budget-track {
+  height: 6px;
+  background: var(--obsidian-5);
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.budget-fill {
+  height: 100%;
+  border-radius: 3px;
+  background: var(--gold);
+  transition: width 0.8s cubic-bezier(0.16,1,0.3,1);
+  width: 0%;
+}
+
+.budget-pct { font-size: 13px; color: var(--gold); text-align: right; font-weight: 500; }
+
+/* LOOP DIAGRAM */
+.loop-container {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 2rem 0;
+}
+
+.loop-node {
+  background: var(--obsidian-4);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 1rem 1.25rem;
+  text-align: center;
+  max-width: 140px;
+  min-width: 120px;
+}
+
+.loop-node .ln-icon { font-size: 22px; margin-bottom: 6px; }
+.loop-node .ln-title { font-size: 12px; color: var(--text-primary); font-weight: 500; }
+.loop-node .ln-sub { font-size: 11px; color: var(--text-muted); margin-top: 2px; }
+
+.loop-arrow {
+  color: var(--gold);
+  font-size: 20px;
+  padding: 0 0.5rem;
+  font-weight: 300;
+}
+
+/* STRATEGY BLOCKS */
+.strategy-block {
+  background: var(--obsidian-3);
+  border-left: 3px solid var(--gold);
+  border-radius: 0 8px 8px 0;
+  padding: 1.25rem 1.5rem;
+  margin-bottom: 1.25rem;
+}
+
+.strategy-block h4 {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--text-primary);
+  margin-bottom: 0.5rem;
+}
+
+.strategy-block p, .strategy-block ul {
+  font-size: 13px;
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+.strategy-block ul { padding-left: 1.2rem; }
+.strategy-block li { margin-bottom: 4px; }
+
+/* PILL TABS */
+.pill-tabs {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-bottom: 2rem;
+}
+
+.pill-tab {
+  border: 1px solid var(--border);
+  background: transparent;
+  color: var(--text-muted);
+  font-size: 12px;
+  padding: 6px 16px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-family: 'DM Sans', sans-serif;
+  transition: all 0.2s;
+}
+
+.pill-tab:hover { border-color: var(--gold); color: var(--gold); }
+.pill-tab.active { background: var(--gold); border-color: var(--gold); color: var(--obsidian); font-weight: 500; }
+
+/* INFLUENCER TIERS */
+.tier-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+
+.tier-card {
+  background: var(--obsidian-3);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 1.5rem;
+  text-align: center;
+  position: relative;
+}
+
+.tier-card.featured {
+  border-color: var(--gold);
+}
+
+.tier-card.featured::before {
+  content: '⭐ Prioritaire';
+  position: absolute;
+  top: -12px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--gold);
+  color: var(--obsidian);
+  font-size: 10px;
+  font-weight: 700;
+  padding: 3px 12px;
+  border-radius: 20px;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  white-space: nowrap;
+}
+
+.tier-name {
+  font-family: 'Playfair Display', serif;
+  font-size: 18px;
+  color: var(--text-primary);
+  margin-bottom: 4px;
+}
+
+.tier-range {
+  font-size: 12px;
+  color: var(--gold);
+  margin-bottom: 1rem;
+}
+
+.tier-budget {
+  font-size: 22px;
+  font-family: 'Playfair Display', serif;
+  color: var(--text-primary);
+  margin-bottom: 4px;
+}
+
+.tier-budget-label {
+  font-size: 11px;
+  color: var(--text-muted);
+}
+
+/* REFERRAL STEPS */
+.ref-steps {
+  counter-reset: ref;
+  list-style: none;
+}
+
+.ref-step {
+  counter-increment: ref;
+  display: flex;
+  gap: 1.25rem;
+  align-items: flex-start;
+  padding: 1.25rem 0;
+  border-bottom: 1px solid rgba(201,168,76,0.1);
+}
+
+.ref-step:last-child { border-bottom: none; }
+
+.ref-step::before {
+  content: counter(ref, decimal-leading-zero);
+  font-family: 'Playfair Display', serif;
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--gold);
+  min-width: 40px;
+  line-height: 1;
+}
+
+.ref-step h4 {
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--text-primary);
+  margin-bottom: 4px;
+}
+
+.ref-step p { font-size: 13px; color: var(--text-secondary); }
+
+/* DOMINATION MATRIX */
+.matrix {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+}
+
+.matrix-cell {
+  background: var(--obsidian-3);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 1.5rem;
+}
+
+.matrix-cell h4 {
+  font-family: 'Playfair Display', serif;
+  font-size: 16px;
+  color: var(--text-primary);
+  margin-bottom: 0.75rem;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.matrix-cell p {
+  font-size: 13px;
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+/* NETWORK EFFECTS */
+.network-phases {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.25rem;
+}
+
+.nw-phase {
+  background: var(--obsidian-3);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 1.25rem;
+}
+
+.nw-phase .nw-num {
+  font-family: 'Playfair Display', serif;
+  font-size: 40px;
+  font-weight: 900;
+  color: rgba(201,168,76,0.2);
+  line-height: 1;
+  margin-bottom: 4px;
+}
+
+.nw-phase h4 { font-size: 14px; color: var(--text-primary); font-weight: 500; margin-bottom: 6px; }
+.nw-phase p { font-size: 12px; color: var(--text-secondary); line-height: 1.5; }
+
+/* HIGHLIGHT BOX */
+.highlight-box {
+  background: rgba(201,168,76,0.07);
+  border: 1px solid var(--border-strong);
+  border-radius: 10px;
+  padding: 1.5rem 2rem;
+  margin: 2rem 0;
+}
+
+.highlight-box p { font-size: 14px; color: var(--text-secondary); line-height: 1.7; }
+.highlight-box strong { color: var(--gold); font-weight: 500; }
+
+/* DIVIDER */
+.divider {
+  height: 1px;
+  background: var(--border);
+  margin: 2rem 0;
+}
+
+/* OVERVIEW NAV */
+.overview-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.overview-card {
+  background: var(--obsidian-3);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 1.25rem;
+  cursor: pointer;
+  transition: all 0.2s;
+  text-decoration: none;
+}
+
+.overview-card:hover {
+  border-color: var(--gold);
+  transform: translateY(-2px);
+}
+
+.overview-card .oc-num {
+  font-size: 11px;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  margin-bottom: 6px;
+}
+
+.overview-card h3 {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--text-primary);
+  line-height: 1.3;
+}
+
+/* SCROLL TO TOP */
+.scroll-top {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  width: 44px; height: 44px;
+  background: var(--gold);
+  color: var(--obsidian);
+  border: none;
+  border-radius: 50%;
+  font-size: 20px;
+  cursor: pointer;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 50;
+  transition: transform 0.2s;
+}
+
+.scroll-top:hover { transform: scale(1.1); }
+.scroll-top.visible { display: flex; }
+
+/* BOLD QUOTE */
+.pull-quote {
+  font-family: 'Playfair Display', serif;
+  font-size: 22px;
+  font-weight: 400;
+  font-style: italic;
+  color: var(--gold);
+  line-height: 1.5;
+  padding: 2rem 0;
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  margin: 2rem 0;
+}
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+  .nav { display: none; }
+  .main { margin-left: 0; }
+  .hero, .section { padding: 2rem; }
+  .tier-grid { grid-template-columns: 1fr; }
+  .matrix { grid-template-columns: 1fr; }
+  .persona { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+
+<!-- SIDEBAR -->
+<nav class="nav">
+  <div class="nav-logo">
+    <div class="wordmark">SANHIA</div>
+    <div class="subtitle">Go-To-Market · 2025–2026</div>
+  </div>
+
+  <div class="nav-section">
+    <div class="nav-section-title">Vue d'ensemble</div>
+    <button class="nav-link active" onclick="showSection('overview')">
+      <span class="num">00</span> Dashboard
+    </button>
+  </div>
+
+  <div class="nav-section">
+    <div class="nav-section-title">Stratégie</div>
+    <button class="nav-link" onclick="showSection('s1')"><span class="num">01</span> Positionnement</button>
+    <button class="nav-link" onclick="showSection('s2')"><span class="num">02</span> ICP</button>
+    <button class="nav-link" onclick="showSection('s3')"><span class="num">03</span> Personas</button>
+    <button class="nav-link" onclick="showSection('s4')"><span class="num">04</span> Acquisition Vendeurs</button>
+    <button class="nav-link" onclick="showSection('s5')"><span class="num">05</span> Acquisition Clients</button>
+  </div>
+
+  <div class="nav-section">
+    <div class="nav-section-title">Canaux</div>
+    <button class="nav-link" onclick="showSection('s6')"><span class="num">06</span> Réseaux Sociaux</button>
+    <button class="nav-link" onclick="showSection('s7')"><span class="num">07</span> TikTok</button>
+    <button class="nav-link" onclick="showSection('s8')"><span class="num">08</span> WhatsApp</button>
+    <button class="nav-link" onclick="showSection('s9')"><span class="num">09</span> Stratégie Campus</button>
+    <button class="nav-link" onclick="showSection('s10')"><span class="num">10</span> Influenceurs</button>
+  </div>
+
+  <div class="nav-section">
+    <div class="nav-section-title">Croissance</div>
+    <button class="nav-link" onclick="showSection('s11')"><span class="num">11</span> Referral System</button>
+    <button class="nav-link" onclick="showSection('s12')"><span class="num">12</span> Growth Loops</button>
+    <button class="nav-link" onclick="showSection('s13')"><span class="num">13</span> Ambassadeurs</button>
+  </div>
+
+  <div class="nav-section">
+    <div class="nav-section-title">Exécution</div>
+    <button class="nav-link" onclick="showSection('s14')"><span class="num">14</span> KPIs Clés</button>
+    <button class="nav-link" onclick="showSection('s15')"><span class="num">15</span> Budget</button>
+    <button class="nav-link" onclick="showSection('s16')"><span class="num">16</span> Plan 90 Jours</button>
+    <button class="nav-link" onclick="showSection('s17')"><span class="num">17</span> Domination Locale</button>
+    <button class="nav-link" onclick="showSection('s18')"><span class="num">18</span> Effets de Réseau</button>
+  </div>
+
+  <div class="nav-progress">
+    <div class="progress-label">Progression lecture</div>
+    <div class="progress-bar"><div class="progress-fill" id="progressFill"></div></div>
+  </div>
+</nav>
+
+<!-- MAIN CONTENT -->
+<main class="main">
+
+  <!-- HERO -->
+  <div class="hero">
+    <div class="hero-eyebrow">Document stratégique confidentiel · Niveau YC</div>
+    <div class="hero-title">
+      L'<span>Amazon</span><br>de l'Afrique de l'Ouest
+    </div>
+    <div class="hero-sub">
+      Go-To-Market complet pour Sanhia — la marketplace universelle qui commence à Ouagadougou et conquiert la CEDEAO.
+    </div>
+    <div class="hero-meta">
+      <div class="hero-stat"><span class="val">18</span><span class="lbl">Chapitres stratégiques</span></div>
+      <div class="hero-stat"><span class="val">90j</span><span class="lbl">Plan d'exécution</span></div>
+      <div class="hero-stat"><span class="val">400M+</span><span class="lbl">Marché CEDEAO</span></div>
+      <div class="hero-stat"><span class="val">2025</span><span class="lbl">Année de lancement</span></div>
+    </div>
+  </div>
+
+  <!-- SECTION 0 : OVERVIEW -->
+  <div id="overview" class="section active">
+    <div class="section-header">
+      <div class="section-num">00</div>
+      <div class="section-title-group">
+        <div class="eyebrow">Vue d'ensemble</div>
+        <h2>Le Plan de Conquête</h2>
+      </div>
+    </div>
+
+    <div class="highlight-box">
+      <p><strong>Thèse centrale :</strong> Sanhia n'est pas "une marketplace de plus". C'est le premier OS du commerce en Afrique de l'Ouest — une infrastructure que les acheteurs, vendeurs, et partenaires logistiques ne pourront pas contourner. Comme Amazon a commencé par les livres, Sanhia commence par Ouagadougou. Mais la vision est totale : <strong>mode, électronique, alimentation, services, et tout ce qu'on achète et vend</strong> au Burkina Faso et au-delà.</p>
+    </div>
+
+    <div class="overview-grid">
+      <div class="overview-card" onclick="showSection('s1')">
+        <div class="oc-num">01 · Stratégie</div>
+        <h3>Positionnement</h3>
+      </div>
+      <div class="overview-card" onclick="showSection('s2')">
+        <div class="oc-num">02 · Cible</div>
+        <h3>ICP Détaillé</h3>
+      </div>
+      <div class="overview-card" onclick="showSection('s3')">
+        <div class="oc-num">03 · Humain</div>
+        <h3>Personas</h3>
+      </div>
+      <div class="overview-card" onclick="showSection('s4')">
+        <div class="oc-num">04 · Offre</div>
+        <h3>Acq. Vendeurs</h3>
+      </div>
+      <div class="overview-card" onclick="showSection('s5')">
+        <div class="oc-num">05 · Demande</div>
+        <h3>Acq. Clients</h3>
+      </div>
+      <div class="overview-card" onclick="showSection('s6')">
+        <div class="oc-num">06 · Canal</div>
+        <h3>Social Media</h3>
+      </div>
+      <div class="overview-card" onclick="showSection('s7')">
+        <div class="oc-num">07 · Viral</div>
+        <h3>TikTok</h3>
+      </div>
+      <div class="overview-card" onclick="showSection('s8')">
+        <div class="oc-num">08 · Direct</div>
+        <h3>WhatsApp</h3>
+      </div>
+      <div class="overview-card" onclick="showSection('s9')">
+        <div class="oc-num">09 · Campus</div>
+        <h3>Universités</h3>
+      </div>
+      <div class="overview-card" onclick="showSection('s10')">
+        <div class="oc-num">10 · Reach</div>
+        <h3>Influenceurs</h3>
+      </div>
+      <div class="overview-card" onclick="showSection('s11')">
+        <div class="oc-num">11 · Viral</div>
+        <h3>Referral</h3>
+      </div>
+      <div class="overview-card" onclick="showSection('s12')">
+        <div class="oc-num">12 · Engine</div>
+        <h3>Growth Loops</h3>
+      </div>
+      <div class="overview-card" onclick="showSection('s13')">
+        <div class="oc-num">13 · Army</div>
+        <h3>Ambassadeurs</h3>
+      </div>
+      <div class="overview-card" onclick="showSection('s14')">
+        <div class="oc-num">14 · Mesure</div>
+        <h3>KPIs</h3>
+      </div>
+      <div class="overview-card" onclick="showSection('s15')">
+        <div class="oc-num">15 · Finance</div>
+        <h3>Budget</h3>
+      </div>
+      <div class="overview-card" onclick="showSection('s16')">
+        <div class="oc-num">16 · Action</div>
+        <h3>Plan 90 Jours</h3>
+      </div>
+      <div class="overview-card" onclick="showSection('s17')">
+        <div class="oc-num">17 · Terrain</div>
+        <h3>Domination Locale</h3>
+      </div>
+      <div class="overview-card" onclick="showSection('s18')">
+        <div class="oc-num">18 · Scale</div>
+        <h3>Effets Réseau</h3>
+      </div>
+    </div>
+  </div>
+
+  <!-- SECTION 1 : POSITIONNEMENT -->
+  <div id="s1" class="section">
+    <div class="section-header">
+      <div class="section-num">01</div>
+      <div class="section-title-group">
+        <div class="eyebrow">Fondation stratégique</div>
+        <h2>Positionnement</h2>
+      </div>
+    </div>
+
+    <div class="pull-quote">
+      "Sanhia — Tout ce que tu veux. Livré chez toi. En toute confiance."
+    </div>
+
+    <div class="card-grid">
+      <div class="card">
+        <div class="card-icon">🎯</div>
+        <div class="tag">Mission</div>
+        <h3>Notre raison d'être</h3>
+        <p>Rendre le commerce aussi simple, sûr et universel à Ouagadougou qu'à Paris ou Lagos — pour chaque Burkinabè, quel que soit son quartier ou son budget.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">⚡</div>
+        <div class="tag">Différenciation</div>
+        <h3>Ce qu'on fait différemment</h3>
+        <p>Paiement mobile natif (Orange Money, Moov), logistique last-mile adaptée à Ouaga, confiance vendeur vérifiée, support en Mooré/Dioula/Français.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">🏆</div>
+        <div class="tag">Vision 3 ans</div>
+        <h3>L'Amazon de la CEDEAO</h3>
+        <p>De Ouagadougou à Abidjan, Dakar, Bamako. L'infrastructure de commerce incontournable pour les 400 millions de consommateurs d'Afrique de l'Ouest.</p>
+      </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <h3 style="font-family:'Playfair Display',serif; font-size:20px; color:var(--text-primary); margin-bottom:1.5rem;">Cadre de positionnement</h3>
+
+    <div class="strategy-block">
+      <h4>🧭 Catégorie créée</h4>
+      <p>Sanhia n'entre pas dans "marketplace de mode" ou "e-commerce alimentaire". Sanhia crée la catégorie <strong>Marketplace Universelle de Confiance</strong> en Afrique de l'Ouest Francophone — là où personne n'existe vraiment.</p>
+    </div>
+
+    <div class="strategy-block">
+      <h4>🔑 Point de différenciation #1 : La Confiance</h4>
+      <p>Le frein #1 à l'e-commerce en Afrique de l'Ouest est la méfiance. Sanhia répond avec un système de vérification vendeur, escrow mobile, et notation transparente. Chaque transaction est protégée.</p>
+    </div>
+
+    <div class="strategy-block">
+      <h4>📍 Ancrage local comme avantage compétitif</h4>
+      <p>Contrairement à Jumia (Nigeria-first) ou aux plateformes chinoises, Sanhia parle burkinabè. Les noms de quartiers, les modes de paiement locaux, les jours de marché — tout est natif.</p>
+    </div>
+
+    <div class="strategy-block">
+      <h4>💰 Stratégie prix : Accessibilité sans compromis sur le premium</h4>
+      <p>Pas de minimum de commande. Pas de frais caché. La commission vendeur commence à 0% les 3 premiers mois. Le premium vient de l'expérience, pas du prix.</p>
+    </div>
+  </div>
+
+  <!-- SECTION 2 : ICP -->
+  <div id="s2" class="section">
+    <div class="section-header">
+      <div class="section-num">02</div>
+      <div class="section-title-group">
+        <div class="eyebrow">Ciblage précis</div>
+        <h2>Ideal Customer Profile</h2>
+      </div>
+    </div>
+
+    <div class="pill-tabs">
+      <button class="pill-tab active" onclick="filterICP('acheteurs')">Acheteurs</button>
+      <button class="pill-tab" onclick="filterICP('vendeurs')">Vendeurs</button>
+    </div>
+
+    <div id="icp-acheteurs">
+      <div class="card-grid">
+        <div class="card">
+          <div class="tag">Segment A · Primaire</div>
+          <h3>Urban Digital Millennial</h3>
+          <p><strong style="color:var(--gold-light)">18–35 ans · Ouagadougou</strong><br>Smartphone Android (Tecno, Itel). Orange Money ou Moov actif. Achète déjà sur Facebook/Instagram. Influencé par les pairs. Budget 5 000–50 000 FCFA/commande.</p>
+        </div>
+        <div class="card">
+          <div class="tag">Segment B · Secondaire</div>
+          <h3>La Femme Active</h3>
+          <p><strong style="color:var(--gold-light)">25–45 ans · Ville + Périphérie</strong><br>Acheteuse principale du foyer. Sensible au prix et à la commodité. Utilise WhatsApp quotidiennement. Chef de famille informel avec fort pouvoir d'achat.</p>
+        </div>
+        <div class="card">
+          <div class="tag">Segment C · Tertiary</div>
+          <h3>L'Étudiant Connecté</h3>
+          <p><strong style="color:var(--gold-light)">17–24 ans · Campus</strong><br>Forte influence sur son réseau. Adopte tôt les nouvelles plateformes. Budget limité mais volume élevé. Ambassadeur naturel si l'expérience est bonne.</p>
+        </div>
+      </div>
+    </div>
+
+    <div id="icp-vendeurs" style="display:none">
+      <div class="card-grid">
+        <div class="card">
+          <div class="tag">Vendeur A · Cœur</div>
+          <h3>Le Commerçant Physique Digital</h3>
+          <p><strong style="color:var(--gold-light)">Marché Rood Woko, Zogona</strong><br>Boutique existante. Cherche à vendre en ligne sans construire son site. A déjà essayé Facebook. Parle Mooré/Dioula/Français. CA 200K–2M FCFA/mois.</p>
+        </div>
+        <div class="card">
+          <div class="tag">Vendeur B · Croissance</div>
+          <h3>La Vendeuse WhatsApp</h3>
+          <p><strong style="color:var(--gold-light)">Indépendante · Semi-formelle</strong><br>Vend déjà via WhatsApp ou Instagram. Veut outil de paiement et livraison. Très agile. Catégories : mode, beauté, alimentaire, artisanat. Réseau existant de 200–500 clients.</p>
+        </div>
+        <div class="card">
+          <div class="tag">Vendeur C · Premium</div>
+          <h3>Le Business Formalisé</h3>
+          <p><strong style="color:var(--gold-light)">PME · Import/Export</strong><br>RCCM enregistré. Besoin de visibilité B2C. Peut stocker un catalogue large. Cherche plateforme crédible pour justifier le premium. CA > 5M FCFA/mois.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SECTION 3 : PERSONAS -->
+  <div id="s3" class="section">
+    <div class="section-header">
+      <div class="section-num">03</div>
+      <div class="section-title-group">
+        <div class="eyebrow">Profils détaillés</div>
+        <h2>Personas</h2>
+      </div>
+    </div>
+
+    <div class="persona">
+      <div class="persona-avatar">AF</div>
+      <div>
+        <h3>Aminata Fofana</h3>
+        <div class="role">🛍️ L'Acheteuse Ambitieuse</div>
+        <p style="font-size:13px; color:var(--text-secondary)">27 ans. Secrétaire de direction à Ouaga 2000. Célibataire, 1 enfant. Salaire : 180 000 FCFA/mois. Elle suit les tendances mode sur TikTok et Instagram. Elle a commandé une fois sur Jumia mais le colis n'est jamais arrivé. Elle rêve d'une plateforme locale qui "ne ment pas".</p>
+        <div class="persona-attrs">
+          <div class="persona-attr"><div class="attr-label">Canal principal</div><div class="attr-value">TikTok + WhatsApp</div></div>
+          <div class="persona-attr"><div class="attr-label">Paiement</div><div class="attr-value">Orange Money</div></div>
+          <div class="persona-attr"><div class="attr-label">Déclencheur achat</div><div class="attr-value">Recommandation amie</div></div>
+          <div class="persona-attr"><div class="attr-label">Frein #1</div><div class="attr-value">Peur d'être arnaquée</div></div>
+          <div class="persona-attr"><div class="attr-label">Panier moyen</div><div class="attr-value">12 000–35 000 FCFA</div></div>
+          <div class="persona-attr"><div class="attr-label">Fréquence</div><div class="attr-value">2–3x / mois</div></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="persona">
+      <div class="persona-avatar">SK</div>
+      <div>
+        <h3>Souleymane Konaté</h3>
+        <div class="role">📦 Le Vendeur Débrouillard</div>
+        <p style="font-size:13px; color:var(--text-secondary)">34 ans. Vend des téléphones et accessoires au marché Gounghin. Gère aussi une boutique Facebook avec 800 abonnés. Il veut "monter d'un niveau" et atteindre des clients dans tout le Burkina. Problème : livraison hors Ouaga impossible seul.</p>
+        <div class="persona-attrs">
+          <div class="persona-attr"><div class="attr-label">Produits</div><div class="attr-value">Électronique, accessoires</div></div>
+          <div class="persona-attr"><div class="attr-label">CA mensuel</div><div class="attr-value">800K–1.5M FCFA</div></div>
+          <div class="persona-attr"><div class="attr-label">Besoin #1</div><div class="attr-value">Livraison fiable</div></div>
+          <div class="persona-attr"><div class="attr-label">Blocker</div><div class="attr-value">Commission trop haute</div></div>
+          <div class="persona-attr"><div class="attr-label">Mobile</div><div class="attr-value">Tecno Camon 20</div></div>
+          <div class="persona-attr"><div class="attr-label">Langue</div><div class="attr-value">Dioula + Français</div></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="persona">
+      <div class="persona-avatar">RD</div>
+      <div>
+        <h3>Raïssa Dao</h3>
+        <div class="role">🎓 L'Étudiante Influenceuse</div>
+        <p style="font-size:13px; color:var(--text-secondary)">20 ans. En 3ème année à l'Université Joseph Ki-Zerbo. 4200 abonnés TikTok, contenu mode et lifestyle. Elle référence naturellement les produits qu'elle aime. Un programme ambassadeur bien conçu ferait d'elle un canal d'acquisition massif.</p>
+        <div class="persona-attrs">
+          <div class="persona-attr"><div class="attr-label">Reach</div><div class="attr-value">4 200 abonnés TikTok</div></div>
+          <div class="persona-attr"><div class="attr-label">Motivation</div><div class="attr-value">Commission + statut</div></div>
+          <div class="persona-attr"><div class="attr-label">Contenu</div><div class="attr-value">Mode, beauté, lifestyle</div></div>
+          <div class="persona-attr"><div class="attr-label">Audience</div><div class="attr-value">Étudiants 18–25 ans</div></div>
+          <div class="persona-attr"><div class="attr-label">Device</div><div class="attr-value">Samsung A14</div></div>
+          <div class="persona-attr"><div class="attr-label">Disponibilité</div><div class="attr-value">Temps libre élevé</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SECTION 4 : ACQUISITION VENDEURS -->
+  <div id="s4" class="section">
+    <div class="section-header">
+      <div class="section-num">04</div>
+      <div class="section-title-group">
+        <div class="eyebrow">Supply side</div>
+        <h2>Stratégie d'Acquisition Vendeurs</h2>
+      </div>
+    </div>
+
+    <div class="highlight-box">
+      <p>Le principe de la marketplace : <strong>sans vendeurs, pas de clients. Sans clients, pas de vendeurs.</strong> On brise ce paradoxe en recrutant les vendeurs EN PREMIER, avec une offre irrésistible. Objectif J+90 : <strong>500 vendeurs actifs</strong> sur Ouagadougou.</p>
+    </div>
+
+    <div class="strategy-block">
+      <h4>🏃 Phase 1 — Opération "Marché Debout" (Semaines 1–4)</h4>
+      <ul>
+        <li>Déployer 5 agents commerciaux terrain dans les 5 grands marchés de Ouaga (Rood Woko, Gounghin, Zogona, Pissy, Dassasgho)</li>
+        <li>Script de recrutement : inscription gratuite en 10 min, 0% commission les 3 premiers mois</li>
+        <li>Photo produits offertes sur place (agent avec smartphone + ring light)</li>
+        <li>Objectif : 50 vendeurs/agent/semaine = 250 vendeurs en 1 semaine de terrain</li>
+      </ul>
+    </div>
+
+    <div class="strategy-block">
+      <h4>📱 Phase 2 — Onboarding WhatsApp Automatisé</h4>
+      <ul>
+        <li>Bot WhatsApp qui guide le vendeur étape par étape : compte → catalogue → premier produit</li>
+        <li>Vidéos tutoriels en Mooré, Dioula, et Français (3 min max chacun)</li>
+        <li>Support dédié vendeur 8h–20h par WhatsApp</li>
+        <li>Badge "Vendeur Vérifié Sanhia" remis après 5 ventes pour créer le désir de statut</li>
+      </ul>
+    </div>
+
+    <div class="strategy-block">
+      <h4>🤝 Phase 3 — Partenariats Associations</h4>
+      <ul>
+        <li>Accord avec CCIB (Chambre de Commerce et d'Industrie du Burkina) : Sanhia comme vitrine digitale officielle</li>
+        <li>Partenariat avec GIZ / Made in Burkina pour les artisans et PME</li>
+        <li>Formation vendeurs avec FASONET sur la digitalisation du commerce</li>
+        <li>Programme "Sanhia Pro" pour vendeurs > 50 produits : analytics + boosts gratuits</li>
+      </ul>
+    </div>
+
+    <div class="strategy-block">
+      <h4>🎁 L'Offre de Lancement Irrésistible</h4>
+      <ul>
+        <li><strong>0% commission</strong> les 90 premiers jours</li>
+        <li><strong>Shooting produit offert</strong> (5 produits) pour les 200 premiers vendeurs</li>
+        <li><strong>Boost gratuit</strong> (équivalent 10 000 FCFA de pub) à chaque inscription</li>
+        <li><strong>Formation marketing digital</strong> offerte tous les samedis</li>
+        <li>Garantie de remboursement si 0 vente en 30 jours (remboursement des frais d'expédition)</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- SECTION 5 : ACQUISITION CLIENTS -->
+  <div id="s5" class="section">
+    <div class="section-header">
+      <div class="section-num">05</div>
+      <div class="section-title-group">
+        <div class="eyebrow">Demand side</div>
+        <h2>Stratégie d'Acquisition Clients</h2>
+      </div>
+    </div>
+
+    <div class="card-grid">
+      <div class="card">
+        <div class="card-icon">🎪</div>
+        <div class="tag">Canal 1 · Offline</div>
+        <h3>Activation Terrain Ouaga</h3>
+        <p>Stands dans les centres commerciaux (Ouaga 2000, SCAD, CFA). Démonstration live de commande + livraison en 2h. Distribution de codes promo FCFA 2 000 à la première commande.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">📣</div>
+        <div class="tag">Canal 2 · Paid</div>
+        <h3>Pub Radio & Télévisée</h3>
+        <p>Spots sur RTB, Savane FM, Omega FM en Mooré et Français. 30 secondes, message simple : "Commande. Paye avec ton téléphone. Livré chez toi." Crédibilité massive à faible coût.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">🔁</div>
+        <div class="tag">Canal 3 · Viral</div>
+        <h3>Programme Parrain</h3>
+        <p>1 000 FCFA de crédit pour le parrain + 500 FCFA pour le filleul à la première commande validée. Système simple, traçable via lien unique WhatsApp/SMS.</p>
+      </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <h3 style="font-family:'Playfair Display',serif; font-size:20px; color:var(--text-primary); margin-bottom:1.5rem;">Funnel d'acquisition client</h3>
+
+    <div class="loop-container">
+      <div class="loop-node">
+        <div class="ln-icon">👁️</div>
+        <div class="ln-title">Découverte</div>
+        <div class="ln-sub">TikTok, radio, bouche-à-oreille</div>
+      </div>
+      <div class="loop-arrow">→</div>
+      <div class="loop-node">
+        <div class="ln-icon">📲</div>
+        <div class="ln-title">Inscription</div>
+        <div class="ln-sub">Code promo bienvenue</div>
+      </div>
+      <div class="loop-arrow">→</div>
+      <div class="loop-node">
+        <div class="ln-icon">🛒</div>
+        <div class="ln-title">1ère Commande</div>
+        <div class="ln-sub">Expérience WOW</div>
+      </div>
+      <div class="loop-arrow">→</div>
+      <div class="loop-node">
+        <div class="ln-icon">⭐</div>
+        <div class="ln-title">Fidélisation</div>
+        <div class="ln-sub">Points + offres</div>
+      </div>
+      <div class="loop-arrow">→</div>
+      <div class="loop-node">
+        <div class="ln-icon">📣</div>
+        <div class="ln-title">Parrainage</div>
+        <div class="ln-sub">K-factor > 1</div>
+      </div>
+    </div>
+
+    <div class="strategy-block">
+      <h4>🚀 L'Offre de Lancement Client (90 premiers jours)</h4>
+      <ul>
+        <li>Livraison gratuite sur la 1ère commande dans Ouaga intramuros</li>
+        <li>Code promo BIENVENUE = 2 000 FCFA de réduction (minimum commande 5 000 FCFA)</li>
+        <li>Garantie "Satisfait ou Remboursé" 7 jours sans question</li>
+        <li>Programme de fidélité : 1 FCFA dépensé = 1 point = 0.5 FCFA de crédit</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- SECTION 6 : SOCIAL MEDIA -->
+  <div id="s6" class="section">
+    <div class="section-header">
+      <div class="section-num">06</div>
+      <div class="section-title-group">
+        <div class="eyebrow">Présence digitale</div>
+        <h2>Stratégie Réseaux Sociaux</h2>
+      </div>
+    </div>
+
+    <div class="card-grid">
+      <div class="card">
+        <div class="card-icon">📸</div>
+        <div class="tag">Instagram · Priorité 1</div>
+        <h3>Instagram</h3>
+        <p>Vitrine premium de Sanhia. Contenu : produits coup de cœur, vendeurs spotlightés, unboxing esthétique, témoignages. Reel quotidien. Stories interactives (sondages, QCM produits). Objectif : 10K abonnés en 90 jours.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">👥</div>
+        <div class="tag">Facebook · Priorité 2</div>
+        <h3>Facebook</h3>
+        <p>Marché de masse à Ouaga. Groupes locaux d'achat/vente à infiltrer légitimement. Pub Facebook Ads ciblée Burkina Faso, 18–45 ans. Groupe Facebook officiel "Communauté Sanhia" avec deals exclusifs.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">🐦</div>
+        <div class="tag">Twitter/X · Notoriété</div>
+        <h3>Twitter / X</h3>
+        <p>Canal de positioning et de crédibilité. Actualités marketplace, partnerships, milestones de croissance. Cible : journalistes, investisseurs, partenaires B2B. 3 tweets/jour minimum.</p>
+      </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <h3 style="font-family:'Playfair Display',serif;font-size:20px;color:var(--text-primary);margin-bottom:1.5rem;">Calendrier éditorial type (semaine)</h3>
+
+    <table class="kpi-table">
+      <thead>
+        <tr>
+          <th>Jour</th>
+          <th>Type de contenu</th>
+          <th>Format</th>
+          <th>Plateforme principale</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>Lundi</td><td>Spotlight vendeur de la semaine</td><td>Reel 30s + Story</td><td>Instagram + Facebook</td></tr>
+        <tr><td>Mardi</td><td>Produit coup de cœur</td><td>Photo esthétique</td><td>Instagram</td></tr>
+        <tr><td>Mercredi</td><td>Tutoriel : comment commander sur Sanhia</td><td>Vidéo 60s</td><td>TikTok + Facebook</td></tr>
+        <tr><td>Jeudi</td><td>Témoignage client authentique</td><td>Story vidéo</td><td>Instagram + WhatsApp</td></tr>
+        <tr><td>Vendredi</td><td>🔥 Flash Sale weekend (–30%)</td><td>Carousel</td><td>Toutes plateformes</td></tr>
+        <tr><td>Samedi</td><td>Unboxing / Review produit</td><td>Reel 45s</td><td>TikTok + Instagram</td></tr>
+        <tr><td>Dimanche</td><td>Top 5 produits de la semaine</td><td>Carrousel</td><td>Instagram + Facebook</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- SECTION 7 : TIKTOK -->
+  <div id="s7" class="section">
+    <div class="section-header">
+      <div class="section-num">07</div>
+      <div class="section-title-group">
+        <div class="eyebrow">Viralité organique</div>
+        <h2>Stratégie TikTok</h2>
+      </div>
+    </div>
+
+    <div class="highlight-box">
+      <p>TikTok est le canal le plus puissant pour toucher les 18–30 ans au Burkina Faso en 2025. <strong>Taux d'engagement 3–5x supérieur à Facebook.</strong> C'est ici que Sanhia doit dominer le feed. Objectif : <strong>50 000 abonnés en 6 mois</strong> via contenu viral natif burkinabè.</p>
+    </div>
+
+    <div class="strategy-block">
+      <h4>🎬 Format 1 — "Ce vendeur de Ouaga vend..."</h4>
+      <p>Série documentaire courte sur les commerçants locaux qui digitalisent leur business grâce à Sanhia. Humain, émotionnel, inspirant. Format 60–90 secondes. Cible : 500K vues/vidéo.</p>
+    </div>
+
+    <div class="strategy-block">
+      <h4>😲 Format 2 — "J'ai commandé X sur Sanhia, voilà ce que j'ai reçu"</h4>
+      <p>Vidéos de déballage surprises. Authentique, non scripté. Partenariat avec micro-influenceurs locaux. Ce format génère naturellement des commentaires et partages. Très viral sur la cible 18–28 ans.</p>
+    </div>
+
+    <div class="strategy-block">
+      <h4>🔥 Format 3 — Challenge #SanhiaFinds</h4>
+      <p>Créer un challenge TikTok où les utilisateurs montrent leur "meilleur achat Sanhia". Récompense : le meilleur post remporte 50 000 FCFA de crédit. Lancer avec 10 influenceurs en simultané pour atteindre la masse critique.</p>
+    </div>
+
+    <div class="strategy-block">
+      <h4>🎙️ Format 4 — Duet & Stitch sur les escroqueries</h4>
+      <p>Répondre aux vidéos virales sur "comment éviter les arnaques en ligne" avec "voilà pourquoi Sanhia est différent". Contenu éducatif + preuve de confiance. Coût : 0 FCFA.</p>
+    </div>
+
+    <div class="strategy-block">
+      <h4>📊 KPIs TikTok spécifiques</h4>
+      <ul>
+        <li>Fréquence : 2 vidéos/jour minimum (algorithme TikTok récompense la régularité)</li>
+        <li>Taux de complétion vidéo cible : > 60%</li>
+        <li>Objectif followers mois 1 : 5 000</li>
+        <li>Objectif followers mois 3 : 25 000</li>
+        <li>Objectif followers mois 6 : 75 000</li>
+        <li>TikTok Shop dès que disponible au Burkina : activer immédiatement</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- SECTION 8 : WHATSAPP -->
+  <div id="s8" class="section">
+    <div class="section-header">
+      <div class="section-num">08</div>
+      <div class="section-title-group">
+        <div class="eyebrow">Canal direct & intimité</div>
+        <h2>Stratégie WhatsApp</h2>
+      </div>
+    </div>
+
+    <div class="highlight-box">
+      <p>WhatsApp est le <strong>premier canal de communication</strong> au Burkina Faso avec un taux d'ouverture > 95%. C'est l'équivalent local de l'email marketing américain — mais 10x plus efficace. Sanhia doit y construire une présence intime et non-invasive.</p>
+    </div>
+
+    <div class="card-grid">
+      <div class="card">
+        <div class="card-icon">📢</div>
+        <div class="tag">Canal 1</div>
+        <h3>Sanhia Broadcast Lists</h3>
+        <p>Listes broadcast segmentées par intérêt (mode, électronique, alimentaire) et localisation (quartier). Envoi max 3x/semaine. Deals exclusifs, nouveaux vendeurs, flash sales. Opt-in obligatoire.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">🤖</div>
+        <div class="tag">Canal 2</div>
+        <h3>Bot WhatsApp Business</h3>
+        <p>Chatbot 24h/24 pour : suivi commande, catalogue rapide, inscription vendeur, support client. Intégration webhook avec le backend Sanhia. Réponse en < 10 secondes.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">👥</div>
+        <div class="tag">Canal 3</div>
+        <h3>Groupes Quartier</h3>
+        <p>Un groupe WhatsApp par quartier de Ouaga avec un ambassadeur local. Deals hyper-locaux, promotion de vendeurs du quartier. Sentiment de communauté forte. Max 256 membres/groupe.</p>
+      </div>
+    </div>
+
+    <div class="strategy-block">
+      <h4>📱 WhatsApp Commerce (Shopping direct)</h4>
+      <ul>
+        <li>Catalogue WhatsApp Business activé avec les 50 produits les plus populaires</li>
+        <li>Lien de paiement Orange Money directement intégré dans la conversation</li>
+        <li>"Commander sur WhatsApp" comme CTA alternatif pour les clients non-app</li>
+        <li>Confirmation de commande automatisée par WhatsApp dans les 30 secondes</li>
+      </ul>
+    </div>
+
+    <div class="strategy-block">
+      <h4>🔔 Séquence d'activation (nouveaux inscrits)</h4>
+      <ul>
+        <li><strong>Jour 0 :</strong> "Bienvenue chez Sanhia + ton code FCFA 2 000"</li>
+        <li><strong>Jour 2 :</strong> "Les 5 produits les plus vendus cette semaine"</li>
+        <li><strong>Jour 5 :</strong> "Ta première commande t'attend – livraison gratuite !"</li>
+        <li><strong>Jour 10 (si pas acheté) :</strong> "Tu avais regardé [X] – il reste 3 en stock"</li>
+        <li><strong>Jour 14 :</strong> "Rejoins notre groupe WhatsApp de ton quartier"</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- SECTION 9 : CAMPUS -->
+  <div id="s9" class="section">
+    <div class="section-header">
+      <div class="section-num">09</div>
+      <div class="section-title-group">
+        <div class="eyebrow">Acquisition jeunes</div>
+        <h2>Stratégie Campus</h2>
+      </div>
+    </div>
+
+    <div class="highlight-box">
+      <p>Les campus burkinabè hébergent <strong>80 000+ étudiants</strong> à Ouagadougou seule. Ce sont les early adopters, les influenceurs de demain, et les consommateurs en forte croissance de revenus. Une stratégie campus bien exécutée peut générer <strong>5 000 nouveaux utilisateurs en 30 jours</strong> à budget quasi nul.</p>
+    </div>
+
+    <div class="strategy-block">
+      <h4>🏛️ Cibles campus prioritaires</h4>
+      <ul>
+        <li>Université Joseph Ki-Zerbo (17 000+ étudiants)</li>
+        <li>Université Norbert Zongo — Koudougou</li>
+        <li>ISTIC, IST, Sup'Management, Ynov Campus Casablanca (modèle à répliquer)</li>
+        <li>INPHB (Ingénieurs et techniciens)</li>
+        <li>Lycées de terminale (pré-acquisition)</li>
+      </ul>
+    </div>
+
+    <div class="strategy-block">
+      <h4>🎓 Programme "Sanhia sur le Campus"</h4>
+      <ul>
+        <li><strong>Stand d'inscription</strong> à l'accueil des nouveaux étudiants (rentrée)</li>
+        <li><strong>Kiosque pop-up</strong> vendredi et samedi : produits populaires (accessoires téléphone, fournitures, mode)</li>
+        <li><strong>Flash deals étudiants</strong> : -20% avec carte étudiante vérifiée</li>
+        <li><strong>Collaboration avec BDE/associations étudiantes</strong> : commission sur chaque vente générée par l'asso</li>
+      </ul>
+    </div>
+
+    <div class="strategy-block">
+      <h4>🏆 Sanhia Business Challenge</h4>
+      <p>Compétition inter-campus : quelle équipe d'étudiants génère le plus de ventes sur Sanhia en 30 jours ? Prix : 200 000 FCFA + stage rémunéré chez Sanhia. Buzz garanti, PR gratuite dans les médias étudiants.</p>
+    </div>
+  </div>
+
+  <!-- SECTION 10 : INFLUENCEURS -->
+  <div id="s10" class="section">
+    <div class="section-header">
+      <div class="section-num">10</div>
+      <div class="section-title-group">
+        <div class="eyebrow">Amplification externe</div>
+        <h2>Stratégie Influenceurs</h2>
+      </div>
+    </div>
+
+    <div class="tier-grid">
+      <div class="tier-card">
+        <div class="tier-name">Nano</div>
+        <div class="tier-range">1K – 10K abonnés</div>
+        <div class="divider" style="margin:0.75rem 0;"></div>
+        <div class="tier-budget">Produit offert</div>
+        <div class="tier-budget-label">+ 5% commission ventes</div>
+        <p style="font-size:12px; color:var(--text-secondary); margin-top:1rem; line-height:1.5;">Communauté engagée. Taux de conversion 3–5x supérieur. Objectif : 100 nano-influenceurs actifs.</p>
+      </div>
+      <div class="tier-card featured">
+        <div class="tier-name">Micro</div>
+        <div class="tier-range">10K – 100K abonnés</div>
+        <div class="divider" style="margin:0.75rem 0;"></div>
+        <div class="tier-budget">25–75K FCFA</div>
+        <div class="tier-budget-label">par post + commission 8%</div>
+        <p style="font-size:12px; color:var(--text-secondary); margin-top:1rem; line-height:1.5;">Le sweet spot. Audience qualifiée, prix abordable, authenticité préservée. Cœur du dispositif.</p>
+      </div>
+      <div class="tier-card">
+        <div class="tier-name">Macro</div>
+        <div class="tier-range">100K+ abonnés</div>
+        <div class="divider" style="margin:0.75rem 0;"></div>
+        <div class="tier-budget">150–500K FCFA</div>
+        <div class="tier-budget-label">par campagne</div>
+        <p style="font-size:12px; color:var(--text-secondary); margin-top:1rem; line-height:1.5;">Notoriété et légitimité. 2–3 campagnes/trimestre pour les moments clés (fêtes, lancement).</p>
+      </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="strategy-block">
+      <h4>🎯 Profils recherchés (Burkina Faso priority)</h4>
+      <ul>
+        <li>Créateurs mode/beauté : 30% du budget influenceur</li>
+        <li>Creators lifestyle Ouagadougou (restaurants, sorties, tendances) : 25%</li>
+        <li>Tech & gadgets reviewers : 20%</li>
+        <li>Humoristes burkinabè (portée massive, confiance audience) : 15%</li>
+        <li>Entrepreneurs et business creators : 10%</li>
+      </ul>
+    </div>
+
+    <div class="strategy-block">
+      <h4>📋 Contrat Type Influenceur Sanhia</h4>
+      <ul>
+        <li>Minimum 1 post par semaine mentionnant Sanhia</li>
+        <li>Lien d'affiliation traçable unique (code promo personnalisé)</li>
+        <li>Liberté créative totale (pas de script imposé)</li>
+        <li>Dashboard temps réel pour voir ses conversions</li>
+        <li>Paiement mensuel via Orange Money</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- SECTION 11 : REFERRAL -->
+  <div id="s11" class="section">
+    <div class="section-header">
+      <div class="section-num">11</div>
+      <div class="section-title-group">
+        <div class="eyebrow">Croissance virale</div>
+        <h2>Referral System</h2>
+      </div>
+    </div>
+
+    <div class="highlight-box">
+      <p>Le referral est l'arme secrète des marketplaces qui scalent sans budget publicitaire. Objectif : <strong>K-factor > 1.2</strong> (chaque utilisateur amène 1.2 nouveaux utilisateurs). À ce niveau, la croissance devient auto-entretenue.</p>
+    </div>
+
+    <ol class="ref-steps">
+      <li class="ref-step">
+        <div>
+          <h4>Inscription et lien unique</h4>
+          <p>Chaque utilisateur reçoit automatiquement un lien de parrainage court et personnalisé. Ex : sanhia.bf/ref/aminata. Partageable en un tap sur WhatsApp, TikTok, et SMS.</p>
+        </div>
+      </li>
+      <li class="ref-step">
+        <div>
+          <h4>Récompense double face</h4>
+          <p>Le parrain reçoit 1 500 FCFA de crédit quand son filleul effectue sa PREMIÈRE commande. Le filleul reçoit 500 FCFA de réduction sur cette commande. Coût réel : ~2 000 FCFA pour un client acquis (vs 15 000 FCFA en pub).</p>
+        </div>
+      </li>
+      <li class="ref-step">
+        <div>
+          <h4>Paliers de parrainage gamifiés</h4>
+          <p>5 filleuls = badge "Ambassadeur Bronze" + 10% de commission sur leurs achats. 20 filleuls = "Ambassadeur Argent" + 500 FCFA/mois récurrent. 50 filleuls = "Ambassadeur Or" + carte cadeau 25 000 FCFA.</p>
+        </div>
+      </li>
+      <li class="ref-step">
+        <div>
+          <h4>Referral vendeurs</h4>
+          <p>Un vendeur qui recrute un autre vendeur actif gagne 0% de commission supplémentaire pendant 1 mois (soit économie de X FCFA en valeur). Incentive puissant dans un milieu commerçant où les relations comptent.</p>
+        </div>
+      </li>
+      <li class="ref-step">
+        <div>
+          <h4>Referral tracking & fraude</h4>
+          <p>Système de détection des auto-référencements et faux comptes. Validation de la commande requise (pas juste l'inscription). Paiement différé de 7 jours après la commande pour laisser le délai de retour.</p>
+        </div>
+      </li>
+    </ol>
+  </div>
+
+  <!-- SECTION 12 : GROWTH LOOPS -->
+  <div id="s12" class="section">
+    <div class="section-header">
+      <div class="section-num">12</div>
+      <div class="section-title-group">
+        <div class="eyebrow">Mécanique de croissance</div>
+        <h2>Growth Loops</h2>
+      </div>
+    </div>
+
+    <h3 style="font-family:'Playfair Display',serif;font-size:18px;color:var(--text-primary);margin-bottom:1.5rem;">Loop 1 — La Boucle Virale Client</h3>
+    <div class="loop-container">
+      <div class="loop-node"><div class="ln-icon">🛍️</div><div class="ln-title">Client achète</div><div class="ln-sub">Bonne expérience</div></div>
+      <div class="loop-arrow">→</div>
+      <div class="loop-node"><div class="ln-icon">💬</div><div class="ln-title">Partage WhatsApp</div><div class="ln-sub">Lien referral</div></div>
+      <div class="loop-arrow">→</div>
+      <div class="loop-node"><div class="ln-icon">👋</div><div class="ln-title">Ami s'inscrit</div><div class="ln-sub">Avec code promo</div></div>
+      <div class="loop-arrow">→</div>
+      <div class="loop-node"><div class="ln-icon">📈</div><div class="ln-title">Base clients</div><div class="ln-sub">Croît organiquement</div></div>
+    </div>
+
+    <div class="divider"></div>
+
+    <h3 style="font-family:'Playfair Display',serif;font-size:18px;color:var(--text-primary);margin-bottom:1.5rem;">Loop 2 — La Boucle Marketplace</h3>
+    <div class="loop-container">
+      <div class="loop-node"><div class="ln-icon">🏪</div><div class="ln-title">+Vendeurs</div><div class="ln-sub">= +Produits</div></div>
+      <div class="loop-arrow">→</div>
+      <div class="loop-node"><div class="ln-icon">🔍</div><div class="ln-title">+Choix</div><div class="ln-sub">= +Valeur</div></div>
+      <div class="loop-arrow">→</div>
+      <div class="loop-node"><div class="ln-icon">😍</div><div class="ln-title">+Clients</div><div class="ln-sub">= +Commandes</div></div>
+      <div class="loop-arrow">→</div>
+      <div class="loop-node"><div class="ln-icon">💰</div><div class="ln-title">+Revenus vendeurs</div><div class="ln-sub">= +Nouveaux vendeurs</div></div>
+    </div>
+
+    <div class="divider"></div>
+
+    <h3 style="font-family:'Playfair Display',serif;font-size:18px;color:var(--text-primary);margin-bottom:1.5rem;">Loop 3 — La Boucle Contenu</h3>
+    <div class="loop-container">
+      <div class="loop-node"><div class="ln-icon">🎬</div><div class="ln-title">TikTok viral</div><div class="ln-sub">Sanhia mentionné</div></div>
+      <div class="loop-arrow">→</div>
+      <div class="loop-node"><div class="ln-icon">📲</div><div class="ln-title">Téléchargements app</div><div class="ln-sub">Pic d'inscriptions</div></div>
+      <div class="loop-arrow">→</div>
+      <div class="loop-node"><div class="ln-icon">⭐</div><div class="ln-title">Reviews & notes</div><div class="ln-sub">UGC généré</div></div>
+      <div class="loop-arrow">→</div>
+      <div class="loop-node"><div class="ln-icon">🔁</div><div class="ln-title">+ Contenu créé</div><div class="ln-sub">Volant s'accélère</div></div>
+    </div>
+  </div>
+
+  <!-- SECTION 13 : AMBASSADEURS -->
+  <div id="s13" class="section">
+    <div class="section-header">
+      <div class="section-num">13</div>
+      <div class="section-title-group">
+        <div class="eyebrow">Force de frappe terrain</div>
+        <h2>Stratégie Ambassadeurs</h2>
+      </div>
+    </div>
+
+    <div class="highlight-box">
+      <p>Les ambassadeurs Sanhia sont des <strong>micro-entrepreneurs indépendants</strong> qui vendent et recrutent pour Sanhia dans leur quartier, campus, ou réseau. Objectif : <strong>200 ambassadeurs actifs en 6 mois</strong>, couvrant les 12 arrondissements de Ouagadougou.</p>
+    </div>
+
+    <div class="card-grid">
+      <div class="card">
+        <div class="tag">Niveau 1</div>
+        <h3>Ambassadeur Junior</h3>
+        <p>Génère 10 inscriptions actives/mois. Gagne : 5% de commission sur les ventes de son réseau + badge exclusif Sanhia. Idéal pour étudiants et indépendants.</p>
+      </div>
+      <div class="card">
+        <div class="tag">Niveau 2</div>
+        <h3>Ambassadeur Senior</h3>
+        <p>50+ inscrits actifs. Gagne : 8% commission + 25 000 FCFA/mois fixe + accès prioritaire aux nouveaux vendeurs de son secteur. Devient référent quartier.</p>
+      </div>
+      <div class="card">
+        <div class="tag">Niveau 3</div>
+        <h3>Ambassadeur Chef de Zone</h3>
+        <p>Gère une équipe de 10 Juniors. Gagne : 3% sur les ventes de toute son équipe + 75 000 FCFA/mois + kit communication professionnel Sanhia.</p>
+      </div>
+    </div>
+
+    <div class="strategy-block">
+      <h4>🛠️ Kit Ambassadeur Sanhia</h4>
+      <ul>
+        <li>T-shirt et casquette brandés Sanhia (capital confiance immédiat)</li>
+        <li>Tablette ou téléphone (prêt) pour démonstrations terrain</li>
+        <li>Flyers et autocollants (quartier, marchés, campus)</li>
+        <li>Dashboard personnel : inscriptions, ventes, commissions en temps réel</li>
+        <li>Groupe WhatsApp ambassadeurs : support, motivation, classement</li>
+        <li>Formation initiale de 2 jours (produit + pitch + éthique)</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- SECTION 14 : KPIs -->
+  <div id="s14" class="section">
+    <div class="section-header">
+      <div class="section-num">14</div>
+      <div class="section-title-group">
+        <div class="eyebrow">Mesure de performance</div>
+        <h2>KPIs Clés</h2>
+      </div>
+    </div>
+
+    <table class="kpi-table">
+      <thead>
+        <tr>
+          <th>Indicateur</th>
+          <th>Objectif J+30</th>
+          <th>Objectif J+90</th>
+          <th>Objectif M+12</th>
+          <th>Priorité</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Vendeurs actifs inscrits</td>
+          <td>150</td>
+          <td>500</td>
+          <td>3 000</td>
+          <td><span class="badge badge-red">Critique</span></td>
+        </tr>
+        <tr>
+          <td>Acheteurs inscrits</td>
+          <td>2 000</td>
+          <td>10 000</td>
+          <td>80 000</td>
+          <td><span class="badge badge-red">Critique</span></td>
+        </tr>
+        <tr>
+          <td>GMV (volume brut transactions)</td>
+          <td>5M FCFA</td>
+          <td>50M FCFA</td>
+          <td>600M FCFA</td>
+          <td><span class="badge badge-red">Critique</span></td>
+        </tr>
+        <tr>
+          <td>Taux de conversion visite → achat</td>
+          <td>3%</td>
+          <td>5%</td>
+          <td>8%</td>
+          <td><span class="badge badge-gold">Haute</span></td>
+        </tr>
+        <tr>
+          <td>Panier moyen (FCFA)</td>
+          <td>12 000</td>
+          <td>18 000</td>
+          <td>25 000</td>
+          <td><span class="badge badge-gold">Haute</span></td>
+        </tr>
+        <tr>
+          <td>K-factor referral</td>
+          <td>0.8</td>
+          <td>1.2</td>
+          <td>1.5</td>
+          <td><span class="badge badge-gold">Haute</span></td>
+        </tr>
+        <tr>
+          <td>Taux de rétention M+1</td>
+          <td>—</td>
+          <td>35%</td>
+          <td>55%</td>
+          <td><span class="badge badge-gold">Haute</span></td>
+        </tr>
+        <tr>
+          <td>NPS (Net Promoter Score)</td>
+          <td>40</td>
+          <td>55</td>
+          <td>65</td>
+          <td><span class="badge badge-teal">Moyen</span></td>
+        </tr>
+        <tr>
+          <td>Abonnés TikTok</td>
+          <td>5 000</td>
+          <td>30 000</td>
+          <td>200 000</td>
+          <td><span class="badge badge-teal">Moyen</span></td>
+        </tr>
+        <tr>
+          <td>Temps de livraison moyen (Ouaga)</td>
+          <td>—</td>
+          <td>< 4h</td>
+          <td>< 2h</td>
+          <td><span class="badge badge-green">Satisfaction</span></td>
+        </tr>
+        <tr>
+          <td>Taux de litiges résolus en 24h</td>
+          <td>70%</td>
+          <td>90%</td>
+          <td>97%</td>
+          <td><span class="badge badge-green">Satisfaction</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- SECTION 15 : BUDGET -->
+  <div id="s15" class="section">
+    <div class="section-header">
+      <div class="section-num">15</div>
+      <div class="section-title-group">
+        <div class="eyebrow">Allocation ressources</div>
+        <h2>Budget Marketing Recommandé</h2>
+      </div>
+    </div>
+
+    <div class="highlight-box">
+      <p>Budget marketing recommandé pour les <strong>90 premiers jours</strong> : <strong>5 000 000 FCFA (~7 600 €)</strong>. Ce budget est calibré pour une croissance agressive mais rentable. Chaque FCFA doit être traçable en GMV généré.</p>
+    </div>
+
+    <div id="budgetBars" style="margin: 2rem 0;">
+      <div class="budget-item">
+        <span class="budget-label">Acquisition terrain (agents)</span>
+        <div class="budget-track"><div class="budget-fill" data-pct="28" style="width:28%;"></div></div>
+        <span class="budget-pct">28%</span>
+      </div>
+      <div class="budget-item">
+        <span class="budget-label">Influenceurs & ambassadeurs</span>
+        <div class="budget-track"><div class="budget-fill" data-pct="22" style="width:22%;"></div></div>
+        <span class="budget-pct">22%</span>
+      </div>
+      <div class="budget-item">
+        <span class="budget-label">Pub payante (Meta + radio)</span>
+        <div class="budget-track"><div class="budget-fill" data-pct="20" style="width:20%;"></div></div>
+        <span class="budget-pct">20%</span>
+      </div>
+      <div class="budget-item">
+        <span class="budget-label">Offres de lancement (codes promo)</span>
+        <div class="budget-track"><div class="budget-fill" data-pct="15" style="width:15%;"></div></div>
+        <span class="budget-pct">15%</span>
+      </div>
+      <div class="budget-item">
+        <span class="budget-label">Contenu & production vidéo</span>
+        <div class="budget-track"><div class="budget-fill" data-pct="10" style="width:10%;"></div></div>
+        <span class="budget-pct">10%</span>
+      </div>
+      <div class="budget-item">
+        <span class="budget-label">Événements campus & pop-ups</span>
+        <div class="budget-track"><div class="budget-fill" data-pct="5" style="width:5%;"></div></div>
+        <span class="budget-pct">5%</span>
+      </div>
+    </div>
+
+    <table class="kpi-table">
+      <thead><tr><th>Poste</th><th>Budget FCFA</th><th>KPI attendu</th></tr></thead>
+      <tbody>
+        <tr><td>Agents terrain (5 agents × 200K FCFA/mois × 3)</td><td>3 000 000</td><td>500 vendeurs recrutés</td></tr>
+        <tr><td>Micro-influenceurs (15 × 50K FCFA)</td><td>750 000</td><td>500K impressions</td></tr>
+        <tr><td>Meta Ads + Radio</td><td>1 000 000</td><td>5 000 inscriptions</td></tr>
+        <tr><td>Codes promo bienvenue</td><td>750 000</td><td>375 1ères commandes</td></tr>
+        <tr><td>Production vidéo TikTok/Instagram</td><td>500 000</td><td>30 vidéos premium</td></tr>
+        <tr><td>Événements, stands campus</td><td>250 000</td><td>3 événements</td></tr>
+        <tr><td><strong>TOTAL</strong></td><td><strong>6 250 000 FCFA</strong></td><td><strong>500 vendeurs · 10K clients</strong></td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- SECTION 16 : PLAN 90 JOURS -->
+  <div id="s16" class="section">
+    <div class="section-header">
+      <div class="section-num">16</div>
+      <div class="section-title-group">
+        <div class="eyebrow">Exécution immédiate</div>
+        <h2>Plan 90 Jours</h2>
+      </div>
+    </div>
+
+    <div class="timeline">
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="timeline-phase">Semaines 1–2 · Fondation</div>
+        <div class="timeline-title">🔧 Mise en place des fondamentaux</div>
+        <div class="timeline-body">
+          <ul>
+            <li>Finalisation tech : app mobile + webapp + bot WhatsApp opérationnel</li>
+            <li>Recrutement de 5 agents commerciaux terrain Ouagadougou</li>
+            <li>Création des comptes TikTok, Instagram, Facebook, WhatsApp Business</li>
+            <li>Production des 10 premières vidéos TikTok en stock (batchée)</li>
+            <li>Accord verbal avec 3 marchés majeurs pour installation de stands</li>
+            <li>Mise en place du dashboard analytics (GMV, inscriptions, K-factor)</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="timeline-phase">Semaines 3–4 · Lancement vendeurs</div>
+        <div class="timeline-title">🏪 Opération "Marché Debout"</div>
+        <div class="timeline-body">
+          <ul>
+            <li>Déploiement des 5 agents sur les marchés : objectif 50 vendeurs/agent</li>
+            <li>Shooting produit offert aux 50 premiers vendeurs (photo pro)</li>
+            <li>Activation des 5 premiers micro-influenceurs avec brief "lancement Sanhia"</li>
+            <li>Lancement du groupe WhatsApp Ambassadeurs avec 20 membres fondateurs</li>
+            <li>Objectif J+30 : 150 vendeurs actifs avec catalogue live</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="timeline-phase">Semaines 5–6 · Lancement public</div>
+        <div class="timeline-title">🚀 Go Live — L'Ouverture Officielle</div>
+        <div class="timeline-body">
+          <ul>
+            <li>Événement de lancement physique + livestream (cible 500 personnes présentes)</li>
+            <li>Activation simultanée de 10 influenceurs (posts coordonnés le même jour)</li>
+            <li>Lancement du referral system + code BIENVENUE actif</li>
+            <li>Premier spot radio RTB + Savane FM (3x/jour pendant 2 semaines)</li>
+            <li>Meta Ads actives : ciblage Ouagadougou, 18–40 ans, intérêts shopping</li>
+            <li>Objectif : 2 000 inscriptions en 48h de lancement</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="timeline-phase">Semaines 7–9 · Activation campus</div>
+        <div class="timeline-title">🎓 Invasion Campus & Ambassadeurs</div>
+        <div class="timeline-body">
+          <ul>
+            <li>Stands dans les 3 campus principaux de Ouaga pendant 2 semaines</li>
+            <li>Lancement du Sanhia Business Challenge inter-campus</li>
+            <li>Recrutement des 50 premiers ambassadeurs (formation weekend)</li>
+            <li>Lancement de la série TikTok "Ce vendeur de Ouaga..."</li>
+            <li>Objectif cumul J+60 : 5 000 acheteurs, 300 vendeurs, GMV 20M FCFA</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="timeline-phase">Semaines 10–12 · Optimisation & Scale</div>
+        <div class="timeline-title">📈 Analyse, Itération, Accélération</div>
+        <div class="timeline-body">
+          <ul>
+            <li>Analyse des données : quels canaux convertissent le mieux ?</li>
+            <li>Doubler le budget sur les 2 canaux les plus performants</li>
+            <li>Couper ou réduire les canaux < ROI attendu</li>
+            <li>Lancer le premier flash sale mensuel "Sanhia Days" (style Black Friday local)</li>
+            <li>Préparer expansion vers la 2ème ville : Bobo-Dioulasso</li>
+            <li>Objectif J+90 : 10 000 acheteurs, 500 vendeurs, GMV 50M FCFA</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SECTION 17 : DOMINATION LOCALE -->
+  <div id="s17" class="section">
+    <div class="section-header">
+      <div class="section-num">17</div>
+      <div class="section-title-group">
+        <div class="eyebrow">Ownership géographique</div>
+        <h2>Stratégie de Domination Locale</h2>
+      </div>
+    </div>
+
+    <div class="highlight-box">
+      <p>La domination locale est la <strong>défense contre les concurrents</strong>. Quand Jumia ou un concurrent tentent d'entrer sur Ouaga, ils trouvent Sanhia déjà partout : dans les marchés, les campus, les radios, et dans la tête des gens. <strong>Devenir un nom commun avant d'être une marque.</strong></p>
+    </div>
+
+    <div class="matrix">
+      <div class="matrix-cell">
+        <h4>🗺️ Ownership par quartier</h4>
+        <p>Un ambassadeur référent dans chaque des 12 arrondissements de Ouaga. Chaque quartier a son groupe WhatsApp Sanhia. L'objectif : "le Sanhia du Secteur 25" doit être connu de 80% des commerçants locaux.</p>
+      </div>
+      <div class="matrix-cell">
+        <h4>📻 Domination des médias locaux</h4>
+        <p>Partenariat de contenu avec Savane FM (émission hebdo "Les entrepreneurs du numérique"). Présence régulière sur RTB TV. Dossier de presse proactif pour journalistes burkinabè. Être cité dans TOUS les articles sur l'e-commerce local.</p>
+      </div>
+      <div class="matrix-cell">
+        <h4>🏛️ Légitimité institutionnelle</h4>
+        <p>Membre actif de la CCIB. Partenaire officiel des événements SIAO, FESPACO (marketplace officielle des artisans). Accord avec le Ministère du Commerce pour digitalisation des commerçants. Ces partenariats créent une barrière d'entrée institutionnelle.</p>
+      </div>
+      <div class="matrix-cell">
+        <h4>📦 Logistique comme arme défensive</h4>
+        <p>Un réseau de 20 points relais dans les quartiers clés de Ouaga. Livraison en moins de 2h dans Ouaga intramuros. Personne ne peut répliquer ça rapidement. La logistique est le fossé défensif (moat) de Sanhia.</p>
+      </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="strategy-block">
+      <h4>🗓️ Calendrier de domination (événements locaux)</h4>
+      <ul>
+        <li><strong>SIAO (Salon International de l'Artisanat) :</strong> Sanhia = partenaire digital officiel. 100 artisans onboardés en live.</li>
+        <li><strong>FESPACO :</strong> Flash sale spéciale avec produits culturels burkinabè. Forte couverture médiatique.</li>
+        <li><strong>Tabaski / Noël :</strong> "Sanhia Fête" — campagne nationale sur la durée, deals massifs.</li>
+        <li><strong>Fête de l'Indépendance (11 août) :</strong> Mise en avant des produits Made in Burkina sur Sanhia. Storytelling patriotique.</li>
+        <li><strong>Rentrée scolaire :</strong> Opération fournitures scolaires à prix bas. Canal d'acquisition familial.</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- SECTION 18 : EFFETS RÉSEAU -->
+  <div id="s18" class="section">
+    <div class="section-header">
+      <div class="section-num">18</div>
+      <div class="section-title-group">
+        <div class="eyebrow">L'avantage qui se consolide</div>
+        <h2>Effets de Réseau Marketplace</h2>
+      </div>
+    </div>
+
+    <div class="pull-quote">
+      "Plus Sanhia a de vendeurs, plus les clients viennent. Plus il y a de clients, plus les vendeurs veulent être présents. Ce cercle vertueux est impossible à copier une fois enclenché."
+    </div>
+
+    <div class="network-phases">
+      <div class="nw-phase">
+        <div class="nw-num">01</div>
+        <h4>Phase Amorçage (0–500 vendeurs)</h4>
+        <p>L'effet réseau est faible. La valeur vient de la qualité de l'expérience et des offres promotionnelles. C'est la phase la plus fragile — il faut pousser fort et vite.</p>
+      </div>
+      <div class="nw-phase">
+        <div class="nw-num">02</div>
+        <h4>Phase Décollage (500–3 000 vendeurs)</h4>
+        <p>Les clients commencent à venir naturellement car la sélection est bonne. Les vendeurs s'inscrivent parce que "tout le monde est sur Sanhia". L'effet commence.</p>
+      </div>
+      <div class="nw-phase">
+        <div class="nw-num">03</div>
+        <h4>Phase Réseau Fort (3 000+ vendeurs)</h4>
+        <p>Chaque nouveau vendeur augmente la valeur pour tous les autres. Chaque client fidèle attire d'autres clients. La plateforme devient auto-entretenue. C'est l'état cible à M+18.</p>
+      </div>
+      <div class="nw-phase">
+        <div class="nw-num">04</div>
+        <h4>Phase Dominance (10 000+ vendeurs)</h4>
+        <p>Sanhia = l'infrastructure du commerce burkinabè. Les vendeurs ne peuvent plus se passer de la plateforme. La dépendance est symétrique. Expansion CEDEAO devient évidente.</p>
+      </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="strategy-block">
+      <h4>🔒 Barrières à l'entrée construites par Sanhia</h4>
+      <ul>
+        <li><strong>Données :</strong> Historique de transactions, ratings, préférences = avantage propriétaire impossible à copier</li>
+        <li><strong>Réseau logistique :</strong> 20 points relais négociés = coût d'imitation élevé</li>
+        <li><strong>Confiance de marque :</strong> Sanhia = garantie dans l'esprit des Burkinabè = capital immatériel</li>
+        <li><strong>Switching costs vendeurs :</strong> Catalogue, reviews, historique de ventes = coût de migration élevé</li>
+        <li><strong>Effets d'apprentissage :</strong> L'algorithme de recommandation s'améliore avec chaque transaction</li>
+      </ul>
+    </div>
+
+    <div class="highlight-box">
+      <p style="font-family:'Playfair Display',serif; font-size:16px; font-style:italic; color:var(--text-primary);">
+        Sanhia ne cherche pas à être "une bonne marketplace". Sanhia cherche à être <strong>THE marketplace</strong> — l'infrastructure incontournable du commerce en Afrique de l'Ouest, comme Amazon l'est aux États-Unis et Alibaba en Chine. La fenêtre d'opportunité est ouverte maintenant. Dans 3 ans, elle sera fermée.
+      </p>
+    </div>
+  </div>
+
+</main>
+
+<!-- SCROLL TO TOP -->
+<button class="scroll-top" id="scrollTop" onclick="scrollToHero()">↑</button>
+
+<script>
+const sections = ['overview','s1','s2','s3','s4','s5','s6','s7','s8','s9','s10','s11','s12','s13','s14','s15','s16','s17','s18'];
+let currentIdx = 0;
+
+function showSection(id) {
+  document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
+  const target = document.getElementById(id);
+  if (target) {
+    target.classList.add('active');
+    target.scrollIntoView({behavior:'smooth'});
+  }
+  document.querySelectorAll('.nav-link').forEach(l => l.classList.remove('active'));
+  const idx = sections.indexOf(id);
+  currentIdx = idx >= 0 ? idx : 0;
+  document.querySelectorAll('.nav-link')[currentIdx].classList.add('active');
+  updateProgress();
+}
+
+function updateProgress() {
+  const pct = Math.round((currentIdx / (sections.length - 1)) * 100);
+  document.getElementById('progressFill').style.width = pct + '%';
+}
+
+function filterICP(type) {
+  document.getElementById('icp-acheteurs').style.display = type === 'acheteurs' ? '' : 'none';
+  document.getElementById('icp-vendeurs').style.display = type === 'vendeurs' ? '' : 'none';
+  document.querySelectorAll('.pill-tab').forEach((t,i) => {
+    t.classList.toggle('active', (i===0 && type==='acheteurs') || (i===1 && type==='vendeurs'));
+  });
+}
+
+function scrollToHero() {
+  window.scrollTo({top:0, behavior:'smooth'});
+}
+
+window.addEventListener('scroll', () => {
+  const btn = document.getElementById('scrollTop');
+  btn.classList.toggle('visible', window.scrollY > 400);
+});
+
+updateProgress();
+</script>
+</body>
+</html>
